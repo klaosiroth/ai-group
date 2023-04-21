@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05. จงเขียนโปรแกรม เพื่อแสดงตามรูปด้านล่าง</title>
+  </head>
+  <body>
+    <h3>05. จงเขียนโปรแกรม เพื่อแสดงตามรูปด้านล่าง</h3>
+    <pre id="pattern"></pre>
+    <script>
+      function consolePattern(n) {
+        let pattern = "";
+
+        for (let i = 1; i < 2 * n; i++) {
+          const j = n - Math.abs(n - i);
+          const spaces = " ".repeat(n - j);
+          const stars = "*".repeat((j - 1) * 2);
+          pattern += `${spaces}${j}${stars}${j}${spaces}\n`;
+        }
+
+        console.log(pattern);
+
+        return (document.getElementById("pattern").innerHTML = pattern);
+      }
+
+      consolePattern(4);
+    </script>
+  </body>
+</html>
